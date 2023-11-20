@@ -2,15 +2,19 @@
 
 -- Criar o banco de dados e as tables (necessário a instalação e utilização do Docker Desktop) --
 
-    1°: Abrir o terminal > CD BACKEND > digitar NPM install
+    1°: Você deve instalar e executar o Docker Desktop
 
-    2°: Ainda no terminal digite NPM RUN DEV
+    2°: Instalar no VSCode as extensões Docker, Database Client e Thunder Client
 
-    3°: Comando "docker run --name mysql -e MYSQL_ROOT_PASSWORD=root -p 3306:3306 -d mysql" na pasta backend no terminal
+    3°: Abrir o terminal > CD BACKEND > digitar NPM install
 
-    4°: Na extensão Database Client, devemos clicar em Create Connection e definir a PORT como 3306, Username como root e Password como root
+    4°: Ainda no terminal digite NPM RUN DEV
 
-    5°: Ainda na extensão Database Client, devemos encontrar o database com o localhost e clicar no botão +, após isso devemos colar o código abaixo na tela de extensão que abriu.
+    5°: Comando "docker run --name mysql -e MYSQL_ROOT_PASSWORD=root -p 3306:3306 -d mysql" na pasta backend no terminal
+
+    6°: Na extensão Database Client, devemos clicar em Create Connection e definir a PORT como 3306, Username como root e Password como root
+
+    7°: Ainda na extensão Database Client, devemos encontrar o database com o localhost e clicar no botão +, após isso devemos colar o código abaixo na tela de extensão que abriu.
 
         CREATE DATABASE IF NOT EXISTS PlanejaMente;
 
@@ -31,7 +35,7 @@
             texto VARCHAR(45) NOT NULL
         )
     
-    6°: Abra a extensão ThunderClient e crie uma request POST com a URL "http://localhost:4000/tasks" > Vá em Body e em JSON utilize o modelo abaixo para criar algumas tarefas
+    8°: Abra a extensão ThunderClient e crie uma request POST com a URL "http://localhost:4000/tasks" > Vá em Body e em JSON utilize o modelo abaixo para criar algumas tarefas
 
         {
             "nome": "",
@@ -55,7 +59,7 @@
 
     Rode novamente a request GET de tarefas, obtendo novamente a lista de tarefas
 
-    7°: Abra a extensão ThunderClient e crie uma request POST com a URL "http://localhost:4000/obs" > Vá em Body e em JSON utilize o modelo abaixo para criar algumas tarefas (o campo id_evento deve ser preenchido com o ID da tarefa que deseja alocar está observação)
+    9°: Abra a extensão ThunderClient e crie uma request POST com a URL "http://localhost:4000/obs" > Vá em Body e em JSON utilize o modelo abaixo para criar algumas tarefas (o campo id_evento deve ser preenchido com o ID da tarefa que deseja alocar está observação)
 
         {
             "id_evento": 1,
