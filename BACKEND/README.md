@@ -8,9 +8,9 @@
 
     3°: Abrir o terminal > CD BACKEND > digitar NPM install
 
-    4°: Ainda no terminal digite NPM RUN DEV
+    4°: Comando "docker run --name mysql -e MYSQL_ROOT_PASSWORD=root -p 3306:3306 -d mysql" na pasta backend no terminal
 
-    5°: Comando "docker run --name mysql -e MYSQL_ROOT_PASSWORD=root -p 3306:3306 -d mysql" na pasta backend no terminal
+    5°: Ainda no terminal digite NPM RUN DEV
 
     6°: Na extensão Database Client, devemos clicar em Create Connection e definir a PORT como 3306, Username como root e Password como root
 
