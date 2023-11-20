@@ -1,3 +1,4 @@
+// Valida os dados necessários para realizar um post de tarefa (nome, data e categoria)
 const validatePost = (request, response, next) => {
     const { body } = request
 
@@ -28,6 +29,7 @@ const validatePost = (request, response, next) => {
     next()
 }
 
+// Valida os dados necessários para realizar um put de tarefa (nome, categoria e concluído)
 const validatePut = (request, response, next) => {
     const { body } = request
 
@@ -58,6 +60,7 @@ const validatePut = (request, response, next) => {
     next()
 }
 
+// Exporta as validações
 module.exports = {
     validatePost,
     validatePut

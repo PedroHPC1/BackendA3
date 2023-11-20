@@ -1,10 +1,13 @@
+// Cria uma conexão com connection.js para se conectar ao banco de dados
 const connection = require ('./connection')
 
+// Busca as observações no banco de dados
 const getAll = async () => {
     const [obs] = await connection.execute('SELECT * FROM obs')
     return obs;
 }
 
+// Cria uma nova observação no banco de dados
 const createObs = async (obs) => {
     const { id_evento, texto } = obs
 
@@ -15,11 +18,13 @@ const createObs = async (obs) => {
     return {insertId: createdObs.insertId}
 }
 
+// Deleta uma observação no banco de dados
 const deleteObs = async (id) => {
     const removedObs = await connection.execute('DELETE FROM obs WHERE id = ?', [id])
     return removedObs;
 }
 
+// Atualiza uma observação no banco de dados
 const updateObs = async (id, obs) => {
     const { texto } = obs
 
@@ -30,6 +35,7 @@ const updateObs = async (id, obs) => {
     return updatedObs
 }
 
+// Exporta as ações
 module.exports = {
     getAll,
     createObs,

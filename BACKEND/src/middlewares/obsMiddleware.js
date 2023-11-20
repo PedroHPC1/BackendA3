@@ -1,3 +1,4 @@
+// Valida os dados necessários para realizar um post de tarefa (id_evento e texto)
 const validatePost = (request, response, next) => {
     const { body } = request
 
@@ -20,6 +21,7 @@ const validatePost = (request, response, next) => {
     next()
 }
 
+// Valida os dados necessários para realizar um put de observação (texto)
 const validatePut = (request, response, next) => {
     const { body } = request
 
@@ -34,6 +36,7 @@ const validatePut = (request, response, next) => {
     next()
 }
 
+// Exporta as validações
 module.exports = {
     validatePost,
     validatePut
